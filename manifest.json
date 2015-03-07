@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Fachos NO",
-  "description": "No te cagues la vida...",
+  "description": "No te cagues la vida leyendo las pelotudeces que comentan en los diarios.",
   "version": "1.0",
 
   "browser_action": {

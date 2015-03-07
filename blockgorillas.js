@@ -1,23 +1,37 @@
+var infobaeProcessor = {
+    name: "infobae",
 
-function deleteInfobaeComments() {
-    console.log("Borrando comentarios de Infobae");
-    $('.comentarios').hide();
-}
+    matches: function(url) {
+        return document.URL.match(this.name);
+    },
 
-function deleteClarinComments() {
-    console.log("Borrando comentarios de Clarín");
-    $('.cometarios-pase').hide();
-}
-
-handlers = {
-    "infobae": deleteInfobaeComments,
-    "clarin": deleteClarinComments
+    process: function() {
+        console.log("Borrando comentarios de Infobae");
+        $('.comentarios').hide();
+    }
 };
 
-$(function() {
-    for (var newspaperName in handlers) {
-        if (document.URL.match(newspaperName)) {
-            handlers[newspaperName]();
-        }
+var clarinProcessor = {
+    name: "clarin",
+
+    matches: function(url) {
+        return document.URL.match(this.name);
+    },
+
+    process: function() {
+        console.log("Borrando comentarios de Clarín");
+        $('.cometarios-pase').hide();
     }
+};
+
+
+processors = [infobaeProcessor, clarinProcessor];
+
+
+$(function() {
+    $.each(processors, function(index, processor) {
+        if (processor.matches(document.URL)) {
+            processor.process();
+        }
+    });
 });
