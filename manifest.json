@@ -12,6 +12,9 @@
   "content_scripts": [{
     "matches": ["http://*.clarin.com/*",
       "http://*.infobae.com/*"],
-    "js": ["jquery.js", "blockgorillas.js"]
+    "js": [
+      "jquery.js",
+      "blockgorillas.js"
+    ]
   }]
 }
