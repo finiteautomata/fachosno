@@ -3,7 +3,7 @@
 
   "name": "Fachos NO",
   "description": "No te cagues la vida leyendo las pelotudeces que comentan en los diarios.",
-  "version": "1.0",
+  "version": "0.1.0",
 
   "browser_action": {
     "default_icon": "icon.png",
@@ -15,5 +15,8 @@
       "jquery.js",
       "blockgorillas.js"
     ]
-  }]
+  }],
+
+  "author": "Juan Manuel Pérez",
+  "homepage_url": "http://github.com/geekazoid/fachosno"
 }
