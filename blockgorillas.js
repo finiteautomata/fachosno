@@ -1,4 +1,3 @@
-
 var processor = {
     matches: function(url) {
         return document.URL.match(this.host_name);
@@ -13,18 +12,26 @@ var processor = {
 
 var infobaeProcessor = Object.create(processor, {
     name: { value: "Infobae" },
-    host_name: { value: "infobae" },
+    host_name: { value: "infobae.com" },
     comments_selector: { value: '.comentarios' }
 });
 
 var clarinProcessor = Object.create(processor, {
     name: { value: "Clarín" },
-    host_name: { value: "clarin" },
+    host_name: { value: "clarin.com" },
     comments_selector: { value: '.cometarios-pase' }
 });
 
 
-processors = [infobaeProcessor, clarinProcessor];
+var lnolProcessor = Object.create(processor, {
+    name: { value: "La Nación" },
+    host_name: { value: "lanacion.com" },
+    comments_selector: { value: '#livefyre' }
+});
+
+
+
+processors = [infobaeProcessor, clarinProcessor, lnolProcessor];
 
 
 $(function() {
@@ -33,4 +40,7 @@ $(function() {
             processor.process();
         }
     });
+
+    $('#show_comments').on('click', function() { alert("PUTO"); });
 });
+

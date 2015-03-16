@@ -10,8 +10,7 @@
     "default_popup": "popup.html"
   },
   "content_scripts": [{
-    "matches": ["http://*.clarin.com/*",
-      "http://*.infobae.com/*"],
+    "matches": ["http://*/*"],
     "js": [
       "jquery.js",
       "blockgorillas.js"
