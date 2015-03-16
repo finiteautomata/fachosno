@@ -29,9 +29,14 @@ var lnolProcessor = Object.create(processor, {
     comments_selector: { value: '#livefyre' }
 });
 
+var perfilProcessor = Object.create(processor, {
+    name: { value : "Perfil" },
+    host_name: { value: "perfil.com"},
+    comments_selector: { value: "#comentarios" }
+});
 
 
-processors = [infobaeProcessor, clarinProcessor, lnolProcessor];
+processors = [infobaeProcessor, clarinProcessor, lnolProcessor, perfilProcessor];
 
 
 $(function() {
@@ -40,7 +45,5 @@ $(function() {
             processor.process();
         }
     });
-
-    $('#show_comments').on('click', function() { alert("PUTO"); });
 });
 
